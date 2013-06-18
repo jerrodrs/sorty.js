@@ -1,7 +1,7 @@
 sorty.js
 ========
 
-A Javascript library for sorting tables simply as possible.
+A Javascript solution for sorting tables simply as possible.
 
 ###Implementing it:
 
