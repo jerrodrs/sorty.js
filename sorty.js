@@ -1,5 +1,12 @@
 window.onload = function(){
-	var tableSort = document.getElementsByClassName("sorty")[0];
+	var tableSort = document.getElementsByClassName("sorty");
+
+	for (var i = 0; i < tableSort.length; i++){
+		sortie(tableSort[i]);
+	}
+
+function sortie(tableSort){
+	
 	var tableRows = tableSort.getElementsByTagName("tr");
 	var columns = tableSort.querySelectorAll("tr th");
 	var tableCells = tableSort.getElementsByTagName("td");
@@ -31,11 +38,19 @@ window.onload = function(){
 		tableRows[i].className = "odd";
 		}
 	}
+	
+	var disabled = new Array();
+	
+	for (var k = 0; k < columns.length; k++){
+		disabled[k]=columns[k].getAttribute("disabled");
+	}
 
 	for (var z = 0; z < columns.length; z++){
+		if(disabled[z] == "true") continue;
 		var currentCol = z;
 		columns[currentCol].onclick=(function(currentCol){
 			return function() {
+				
 				if(sorted[0] == "up"){
 					sortDown(currentCol);
 				}else{
@@ -51,11 +66,7 @@ window.onload = function(){
 			rowsTable[i] = new Array(columns.length-1);
 	}
 	
-	var disabled = new Array();
-	
-	for (var k = 0; k < columns.length; k++){
-		disabled[k]=columns[k].getAttribute("disabled");
-	}
+
 	
 	
 	for (var i = 0; i < tableRows.length-1; i++) {	
@@ -144,4 +155,5 @@ window.onload = function(){
 		printTable();
 		sorted = ["down",rowNum];
 	}
+}
 };
