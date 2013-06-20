@@ -77,11 +77,13 @@ function sortie(tableSort){
 
 	
 	var begin_sort=tableSort.getAttribute("begin_sort") || "NaN";
-	var start_column=tableSort.getAttribute("start_column") || 0;
+	var start_column=tableSort.getAttribute("start_column") || 1;
 	
 	if(begin_sort == "ascending"){
+		if(disabled[start_column - 1] == "true") return true;
 		sortUp(start_column - 1);
 	}else if(begin_sort == "descending"){
+		if(disabled[start_column - 1] == "true") return true;
 		sortDown(start_column - 1);
 	}
 	
