@@ -13,12 +13,45 @@ function sortie(tableSort){
 	var rowsTable = new Array();
 	var sorted = ["up",0];
 	
-	var css = 
-	'.sorty {border: 1px solid #CCC; font-family: Arial; font-size: 10pt;}' +
-	'.sorty th {background: #CCC; border: 0px; }' +
-	'.sorty td {border: 0px solid #CCC; }' +
-	'.sorty .even {background: #efefef; }' +
-	'.sorty .odd {background: #FFF; }';
+	
+	var theme=tableSort.getAttribute("theme") || "NaN";
+	
+	if(theme == "gray"){
+		var css = 
+		'.sorty {border: 1px solid #CCC; font-family: Arial; font-size: 10pt;}' +
+		'.sorty th {background: #CCC; border: 0px; }' +
+		'.sorty td {border: 0px solid #CCC; }' +
+		'.sorty .even {background: #efefef; }' +
+		'.sorty .odd {background: #FFF; }';
+
+	}else if(theme == "green"){
+		var css = 
+		'.sorty {border: 1px solid #CCC; font-family: Arial; font-size: 10pt;}' +
+		'.sorty th {background: #688C5E; color: #FFF; border: 0px; }' +
+		'.sorty td {border: 0px solid #CCC; }' +
+		'.sorty .even {background: #D7E3D3; }' +
+		'.sorty .odd {background: #FFF; }';
+
+	}else if(theme == "red"){
+		var css = 
+		'.sorty {border: 1px solid #CCC; font-family: Arial; font-size: 10pt;}' +
+		'.sorty th {background: #AB5252; color: #FFF; border: 0px; }' +
+		'.sorty td {border: 0px solid #CCC; }' +
+		'.sorty .even {background: #F7DCDC; }' +
+		'.sorty .odd {background: #FFF; }';
+
+	}else if(theme == "blue"){
+		var css = 
+		'.sorty {border: 1px solid #CCC; font-family: Arial; font-size: 10pt;}' +
+		'.sorty th {background: #1BB2E0; color: #FFF; border: 0px; }' +
+		'.sorty td {border: 0px solid #CCC; }' +
+		'.sorty .even {background: #CEECF5; }' +
+		'.sorty .odd {background: #FFF; }';
+
+	}
+	
+	
+	
 	var	head = document.getElementsByTagName('head')[0];
 	var	style = document.createElement('style');
 
@@ -30,6 +63,10 @@ function sortie(tableSort){
 	}
 
 	head.appendChild(style);
+	
+	
+	
+	
 	
 	for (var i = 0; i < tableRows.length; i++) {	
 		if(i%2==0){

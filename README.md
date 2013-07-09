@@ -31,6 +31,12 @@ begin_sort tells sorty to either sort initially by "ascending" or "descending".
 start_column tells sorty what column to sort on launch. It accepts an integer which represents the column number, "1" for column 1 etc. Default is 1.
 
 
+`<table border="1" class="sorty" theme="">`
+
+
+There are 4 built in colour schemes to choose from if you don't wanna style it yourself. Gray, green, red, or blue are valid values.
+
+
 ###Current Features:
 
 *	Single Column Ascending/Descending Sorting
